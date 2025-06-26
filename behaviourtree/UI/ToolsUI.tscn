@@ -1,0 +1,326 @@
+[gd_scene load_steps=25 format=3 uid="uid://bvlv7vv2iggql"]
+
+[ext_resource type="Script" path="res://addons/behaviourtree/UI/ToolsUI.cs" id="1_582mj"]
+[ext_resource type="Texture2D" uid="uid://blpxxr8orh3de" path="res://addons/behaviourtree/Icons/FSM/StateMachine.svg" id="2_aimxa"]
+[ext_resource type="Texture2D" uid="uid://damsgg2fomegq" path="res://addons/behaviourtree/Icons/composites/Sequence.svg" id="2_mk07y"]
+[ext_resource type="Texture2D" uid="uid://cqch0qptfnlp8" path="res://addons/behaviourtree/Icons/composites/Selector.svg" id="3_amp4k"]
+[ext_resource type="Texture2D" uid="uid://cgxocy74mixra" path="res://addons/behaviourtree/Icons/FSM/Bridge.svg" id="3_t6yyu"]
+[ext_resource type="Texture2D" uid="uid://by8ufonyhaxkr" path="res://addons/behaviourtree/Icons/composites/RandomSequence.svg" id="4_cjyy6"]
+[ext_resource type="Texture2D" uid="uid://trt2xa5t5pra" path="res://addons/behaviourtree/Icons/composites/RandomSelector.svg" id="5_mpd6a"]
+[ext_resource type="Texture2D" uid="uid://d13gnuq8qjxn8" path="res://addons/behaviourtree/Icons/composites/Random.svg" id="6_fab4w"]
+[ext_resource type="Texture2D" uid="uid://dmg0c83sd1y23" path="res://addons/behaviourtree/Icons/decorators/AlwaysFail.svg" id="8_3r7mq"]
+[ext_resource type="Texture2D" uid="uid://doiiyi2xxc4t5" path="res://addons/behaviourtree/Icons/decorators/AlwaysSucceed.svg" id="9_elt6m"]
+[ext_resource type="Texture2D" uid="uid://c57mmh72s485" path="res://addons/behaviourtree/Icons/composites/psequence.svg" id="9_ouuxt"]
+[ext_resource type="Texture2D" uid="uid://bpdfedewp3sxr" path="res://addons/behaviourtree/Icons/composites/PSELECTOR.svg" id="10_0faqi"]
+[ext_resource type="Texture2D" uid="uid://bo2tsemovwtk3" path="res://addons/behaviourtree/Icons/decorators/Invert.svg" id="10_ap5wr"]
+[ext_resource type="Texture2D" uid="uid://c5u0v0v7ux152" path="res://addons/behaviourtree/Icons/decorators/Limit.svg" id="11_prag3"]
+[ext_resource type="Texture2D" uid="uid://b6ye3owq1o00g" path="res://addons/behaviourtree/Icons/decorators/Repeat.svg" id="12_aw81b"]
+[ext_resource type="Texture2D" uid="uid://b10hac08u2b43" path="res://addons/behaviourtree/Icons/decorators/UntilFail.svg" id="13_i8cpt"]
+[ext_resource type="Texture2D" uid="uid://d054j3qyvovfv" path="res://addons/behaviourtree/Icons/decorators/UntilSuccess.svg" id="14_hn3rp"]
+[ext_resource type="Texture2D" uid="uid://stpcc8mmu0f7" path="res://addons/behaviourtree/Icons/leafs/Print.svg" id="15_ph36h"]
+[ext_resource type="Texture2D" uid="uid://cii128j6qv0vf" path="res://addons/behaviourtree/Icons/leafs/Wait.svg" id="16_tgjw0"]
+[ext_resource type="Texture2D" uid="uid://bn388wi0dmlf0" path="res://addons/behaviourtree/Icons/decorators/PRINT RESULT.svg" id="18_0rjlg"]
+[ext_resource type="Texture2D" uid="uid://dsj364ytxlmlk" path="res://addons/behaviourtree/Icons/leafs/blackboard.svg" id="21_ib7hx"]
+[ext_resource type="Texture2D" uid="uid://n3de5ttfi0ev" path="res://addons/behaviourtree/Icons/leafs/animation.svg" id="22_dy4r3"]
+[ext_resource type="Texture2D" uid="uid://bvmv7kkot3mf6" path="res://addons/behaviourtree/Icons/leafs/cooldown.svg" id="23_kbjwm"]
+[ext_resource type="Texture2D" uid="uid://ck1i5aou4teu8" path="res://addons/behaviourtree/Icons/leafs/PlaySound.svg" id="24_qco3m"]
+
+[node name="ToolsUi" type="Control"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 300.0
+offset_bottom = 320.0
+grow_vertical = 2
+script = ExtResource("1_582mj")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+size = Vector2i(392, 175)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="Header" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Toolbox[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="FSM" type="BoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/FSM"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][img]res://addons/behaviourtree/Icons/FSM/StateMachine.svg[/img] Finite State Machine[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/FSM"]
+layout_mode = 2
+
+[node name="FSM" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/FSM/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FSM"
+icon = ExtResource("2_aimxa")
+
+[node name="FSMBridge" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/FSM/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FSMBridge"
+icon = ExtResource("3_t6yyu")
+
+[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Composites" type="BoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="Composites" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][img]res://addons/behaviourtree/Icons/composites/Composite.svg[/img] Composites[/center]
+"
+fit_content = true
+scroll_active = false
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites"]
+layout_mode = 2
+
+[node name="Sequence" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sequence"
+icon = ExtResource("2_mk07y")
+
+[node name="Selector" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Selector
+"
+icon = ExtResource("3_amp4k")
+
+[node name="RandomSequence" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "RandomSequence"
+icon = ExtResource("4_cjyy6")
+
+[node name="RandomSelector" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "RandomSelector"
+icon = ExtResource("5_mpd6a")
+
+[node name="Random" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Random"
+icon = ExtResource("6_fab4w")
+
+[node name="ParallelSequence" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ParallelSequence"
+icon = ExtResource("9_ouuxt")
+
+[node name="ParallelSelector" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Composites/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ParallelSelector"
+icon = ExtResource("10_0faqi")
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Decorators" type="BoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="Decorators" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][img]res://addons/behaviourtree/Icons/decorators/Decorator.svg[/img] Decorators[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators"]
+layout_mode = 2
+
+[node name="AlwaysFail" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "AlwaysFail"
+icon = ExtResource("8_3r7mq")
+
+[node name="AlwaysSucceed" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "AlwaysSucceed"
+icon = ExtResource("9_elt6m")
+
+[node name="Invert" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Invert"
+icon = ExtResource("10_ap5wr")
+
+[node name="Limit" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Limit"
+icon = ExtResource("11_prag3")
+
+[node name="Repeat" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Repeat"
+icon = ExtResource("12_aw81b")
+
+[node name="UntilFail" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "UntilFail"
+icon = ExtResource("13_i8cpt")
+
+[node name="UntilSuccess" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "UntilSuccess"
+icon = ExtResource("14_hn3rp")
+
+[node name="PrintResult" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Decorators/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PrintResult
+"
+icon = ExtResource("18_0rjlg")
+
+[node name="HSeparator3" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Leafs" type="BoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="Leafs" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][img]res://addons/behaviourtree/Icons/leafs/Leaf.svg[/img] Leafs[/center]
+"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs"]
+layout_mode = 2
+
+[node name="Print" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Print
+"
+icon = ExtResource("15_ph36h")
+
+[node name="Wait" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Wait
+"
+icon = ExtResource("16_tgjw0")
+
+[node name="BlackboardDebug" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BlackboardDebug
+"
+icon = ExtResource("21_ib7hx")
+
+[node name="PlayAnimation" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PlayAnimation
+"
+icon = ExtResource("22_dy4r3")
+
+[node name="Cooldown" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cooldown
+"
+icon = ExtResource("23_kbjwm")
+
+[node name="PlaySound" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PlaySound
+"
+icon = ExtResource("24_qco3m")
+
+[node name="Duration" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer/Leafs/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Duration
+"
+icon = ExtResource("16_tgjw0")
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer/BoxContainer"]
+layout_mode = 2
+text = "RightClick: Add as a child
+Shift + RightClick: Add as a parent
+"
